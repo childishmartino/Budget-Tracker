@@ -23,7 +23,7 @@ self.addEventListener('activate', (event) => {
         caches
             .keys()
             .then((keyList) => {
-                let cacheKeyList = keylist.filter((key) => {
+                let cacheKeyList = keyList.filter((key) => {
                     return key.indexOf("my-site-cache-")
                 })
                 cacheKeyList.push(CACHE_NAME)
@@ -41,7 +41,7 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', (event) => {
     if (event.request.url.includes('/api/')) {
         event.respondWith(
-            caches.open(DATA_CACHE_NAME).then((cachedResponse) => {
+            caches.open(DATA_CACHE_NAME).then((cache) => {
                 return fetch(event.request)
                 .then(res => {
                     if (res.status === 200) {

@@ -72,4 +72,3 @@ const saveRecord = (record) => {
 };
 
 window.addEventListener('online', checkDatabase);;
-//find the boilerplate stuff should be around 65 lines of code
