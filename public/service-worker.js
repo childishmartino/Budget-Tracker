@@ -63,7 +63,7 @@ self.addEventListener('fetch', (event) => {
                 if (res) {
                     return res
                 } else if (
-                    event.request.headers.get('accept').inclueds('text/html')
+                    event.request.headers.get('accept').includes('text/html')
                 ) {
                     return caches.match('/')
                 }
